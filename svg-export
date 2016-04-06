@@ -1,0 +1,11 @@
+if [ ! -d "$1" ]; then
+    mkdir $1
+fi
+mkdir $1/mipmap-mdpi $1/mipmap-hdpi $1/mipmap-xhdpi $1/mipmap-xxhdpi \
+    $1/mipmap-xxxhdpi
+
+inkscape --file $2 --export-png $1/mipmap-mdpi/$3 --export-width 48
+inkscape --file $2 --export-png $1/mipmap-hdpi/$3 --export-width 72
+inkscape --file $2 --export-png $1/mipmap-xhdpi/$3 --export-width 96
+inkscape --file $2 --export-png $1/mipmap-xxhdpi/$3 --export-width 144
+inkscape --file $2 --export-png $1/mipmap-xxxhdpi/$3 --export-width 192
