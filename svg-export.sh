@@ -2,7 +2,12 @@
 
 usage() { echo "Usage: $0 [-d] [-s] [-n]" 1>&2; exit 1; }
 
-command -v inkspace >/dev/null 2>&1 || { echo >&2 "Inkspace is missing. Aborting."; exit 1;}
+command -v inkscape >/dev/null 2>&1 || { echo >&2 "Inkscape is missing. Aborting."; exit 1;}
+
+# $1 = directory where logos will be placed
+# $2 = input logo file
+# $3 = output logo name
+# eg. svg-export.sh ~/logo ~/logo/input.svg output.png
 
 if [ ! -d "$1" ]; then
     mkdir $1
